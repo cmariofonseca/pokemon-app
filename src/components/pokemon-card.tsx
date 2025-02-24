@@ -45,14 +45,14 @@ export default function PokemonCard({ pokemon }: { readonly pokemon: Pokemon }) 
       <h2 className="text-xl font-bold capitalize">{pokemon.name}</h2>
 
       <Link href={`/${pokemon.id}`} className="text-blue-500 hover:underline block mb-2">
-        More Info
+        Ver más información
       </Link>
 
       <button
         onClick={toggleFavorite}
         className={`px-4 py-2 rounded ${isFavorite ? "bg-red-500" : "bg-green-500"} text-white`}
       >
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+        {isFavorite ? "Eliminar de Favoritos" : "Agregar a Favoritos"}
       </button>
     </div>
   );

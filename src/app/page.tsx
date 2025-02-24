@@ -42,7 +42,7 @@ function PokemonList() {
 export default function Home() {
   return (
     <div className="px-10 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Pokémon List</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Listado de Pokémones</h1>
       <Suspense fallback={<p className="text-center">Loading...</p>}>
         <PokemonList />
       </Suspense>

@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Pokemon } from "../../types/pokemon.types";
 
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
 async function fetchPokemonDetails(name: string): Promise<Pokemon> {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   if (!response.ok) {
@@ -17,7 +23,7 @@ async function fetchPokemonDetails(name: string): Promise<Pokemon> {
   };
 }
 
-export default async function PokemonDetails({ params }: { params: { id: string } }) {
+export default async function PokemonDetails({ params }: PageProps) {
   const pokemon = await fetchPokemonDetails(params.id);
 
   return (
@@ -25,7 +31,6 @@ export default async function PokemonDetails({ params }: { params: { id: string 
       <div className="flex justify-center">
         <h1 className="text-3xl font-bold capitalize">{pokemon.name}</h1>
       </div>
-
       <div className="relative w-24 h-24 mx-auto mb-2">
         <Image
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
@@ -35,7 +40,6 @@ export default async function PokemonDetails({ params }: { params: { id: string 
           className="object-contain"
         />
       </div>
-
       <div className="flex justify-center">
         <div>
           <div>

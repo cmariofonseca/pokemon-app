@@ -44,7 +44,7 @@ export default function PokemonCard({ pokemon }: { readonly pokemon: Pokemon }) 
 
       <h2 className="text-xl font-bold capitalize">{pokemon.name}</h2>
 
-      <Link href={`/pokemon/${pokemon.name}`} className="text-blue-500 hover:underline block mb-2">
+      <Link href={`/${pokemon.id}`} className="text-blue-500 hover:underline block mb-2">
         More Info
       </Link>
 

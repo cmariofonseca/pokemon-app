@@ -22,7 +22,10 @@ export default async function PokemonDetails({ params }: { params: { id: string 
 
   return (
     <div className="p-4">
-      <h1 className="text-3xl font-bold capitalize">{pokemon.name}</h1>
+      <div className="flex justify-center">
+        <h1 className="text-3xl font-bold capitalize">{pokemon.name}</h1>
+      </div>
+
       <div className="relative w-24 h-24 mx-auto mb-2">
         <Image
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
@@ -32,18 +35,23 @@ export default async function PokemonDetails({ params }: { params: { id: string 
           className="object-contain"
         />
       </div>
-      <p>
-        <strong>ID:</strong> {pokemon.id}
-      </p>
-      <p>
-        <strong>Height:</strong> {pokemon.height}
-      </p>
-      <p>
-        <strong>Weight:</strong> {pokemon.weight}
-      </p>
-      <p>
-        <strong>Types:</strong> {pokemon.types?.map((type) => type).join(", ") ?? "Unknown"}
-      </p>
+
+      <div className="flex justify-center">
+        <div>
+          <div>
+            <strong>ID:</strong> {pokemon.id}
+          </div>
+          <div>
+            <strong>Height:</strong> {pokemon.height}
+          </div>
+          <div>
+            <strong>Weight:</strong> {pokemon.weight}
+          </div>
+          <div>
+            <strong>Types:</strong> {pokemon.types?.map((type) => type).join(", ") ?? "Unknown"}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

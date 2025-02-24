@@ -17,7 +17,7 @@ export default function Navbar() {
           {pathname !== "/" && (
             <Link href="/">
               <button className="bg-white text-blue-600 px-4 py-2 rounded-md shadow-md">
-                🏠 Pokémon List
+                🏠 Listado de Pokémones
               </button>
             </Link>
           )}
@@ -25,7 +25,7 @@ export default function Navbar() {
           {pathname !== "/favorites" && (
             <Link href="/favorites">
               <button className="bg-yellow-400 text-white px-4 py-2 rounded-md shadow-md">
-                ⭐ Favorites
+                ⭐ Favoritos
               </button>
             </Link>
           )}

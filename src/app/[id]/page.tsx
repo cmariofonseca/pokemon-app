@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Pokemon } from "../../types/pokemon.types";
 
 interface PageProps {
-  params: {
-    id: string;
-  };
+  readonly params: Promise<{
+    readonly id: string;
+  }>;
 }
 
 async function fetchPokemonDetails(name: string): Promise<Pokemon> {
@@ -24,7 +24,8 @@ async function fetchPokemonDetails(name: string): Promise<Pokemon> {
 }
 
 export default async function PokemonDetails({ params }: PageProps) {
-  const pokemon = await fetchPokemonDetails(params.id);
+  const { id } = await params;
+  const pokemon = await fetchPokemonDetails(id);
 
   return (
     <div className="p-4">
